@@ -64,6 +64,7 @@ export default function (Glide, Components, Events) {
 
               Glide.index = 0
             }
+
             Events.emit('run.end', move)
           } else if (countableSteps) {
             Glide.index += Math.min(length - Glide.index, -toInt(steps))
@@ -81,6 +82,7 @@ export default function (Glide, Components, Events) {
 
               Glide.index = length
             }
+
             Events.emit('run.start', move)
           } else if (countableSteps) {
             Glide.index -= Math.min(Glide.index, toInt(steps))

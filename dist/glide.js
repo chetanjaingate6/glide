@@ -932,6 +932,7 @@ var Run = function (Glide, Components, Events) {
 
               Glide.index = 0;
             }
+
             Events.emit('run.end', move);
           } else if (countableSteps) {
             Glide.index += Math.min(length - Glide.index, -toInt(steps));
@@ -949,6 +950,7 @@ var Run = function (Glide, Components, Events) {
 
               Glide.index = length;
             }
+
             Events.emit('run.start', move);
           } else if (countableSteps) {
             Glide.index -= Math.min(Glide.index, toInt(steps));
@@ -3069,11 +3071,10 @@ var Controls = function (Glide, Components, Events) {
      * @return {Void}
      */
     setActive: function setActive() {
-      // sets class for navigation
       for (var i = 0; i < this._n.length; i++) {
         this.addClass(this._n[i].children);
       }
-      // sets class for controls
+
       for (var _i = 0; _i < this._i.length; _i++) {
         this.addControlsClass(this._i[_i].children);
       }
@@ -3123,9 +3124,11 @@ var Controls = function (Glide, Components, Events) {
         for (var i = 0; i < controls.length; i++) {
           controls[i].classList.remove(settings.classes.disabledArrow);
         }
+
         if (Components.Run.isStart()) {
           controls[0].classList.add(settings.classes.disabledArrow);
         }
+
         if (Components.Run.isEnd()) {
           controls[1].classList.add(settings.classes.disabledArrow);
         }
