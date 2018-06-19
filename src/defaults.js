@@ -106,6 +106,13 @@ export default {
   animationDuration: 400,
 
   /**
+   * Allow looping the the `slider` type. SLider will move back to the first/last slide when being at last/first index and moving forward/backward.
+   *
+   * @type {Boolean}
+   */
+  rewind: true,
+
+  /**
    * Duration of the rewinding animation of the `slider` type in milliseconds.
    *
    * @type {Number}
@@ -161,13 +168,6 @@ export default {
    * }`
    */
   breakpoints: {},
-
-  /**
-   * Allows looping the slides.
-   *
-   * @type {Boolean}
-   */
-  loop: true,
 
   /**
    * Collection of internally used HTML classes.
