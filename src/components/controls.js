@@ -50,10 +50,6 @@ export default function (Glide, Components, Events) {
       for (let i = 0; i < this._n.length; i++) {
         this.addClass(this._n[i].children)
       }
-
-      for (let i = 0; i < this._i.length; i++) {
-        this.addControlsClass(this._i[i].children)
-      }
     },
 
     /**
@@ -82,30 +78,6 @@ export default function (Glide, Components, Events) {
       siblings(item).forEach(sibling => {
         sibling.classList.remove(settings.classes.activeNav)
       })
-    },
-
-    /**
-     * Toggles active class on items inside controls.
-     *
-     * @param  {HTMLElement} controls
-     * @return {Void}
-     */
-    addControlsClass (controls) {
-      let settings = Glide.settings
-
-      if (Glide.isType('slider') && !settings.loop) {
-        for (let i = 0; i < controls.length; i++) {
-          controls[i].classList.remove(settings.classes.disabledArrow)
-        }
-
-        if (Components.Run.isStart()) {
-          controls[0].classList.add(settings.classes.disabledArrow)
-        }
-
-        if (Components.Run.isEnd()) {
-          controls[1].classList.add(settings.classes.disabledArrow)
-        }
-      }
     },
 
     /**

@@ -3068,10 +3068,6 @@ var Controls = function (Glide, Components, Events) {
       for (var i = 0; i < this._n.length; i++) {
         this.addClass(this._n[i].children);
       }
-
-      for (var _i = 0; _i < this._i.length; _i++) {
-        this.addControlsClass(this._i[_i].children);
-      }
     },
 
 
@@ -3102,31 +3098,6 @@ var Controls = function (Glide, Components, Events) {
       siblings(item).forEach(function (sibling) {
         sibling.classList.remove(settings.classes.activeNav);
       });
-    },
-
-
-    /**
-     * Toggles active class on items inside controls.
-     *
-     * @param  {HTMLElement} controls
-     * @return {Void}
-     */
-    addControlsClass: function addControlsClass(controls) {
-      var settings = Glide.settings;
-
-      if (Glide.isType('slider') && !settings.loop) {
-        for (var i = 0; i < controls.length; i++) {
-          controls[i].classList.remove(settings.classes.disabledArrow);
-        }
-
-        if (Components.Run.isStart()) {
-          controls[0].classList.add(settings.classes.disabledArrow);
-        }
-
-        if (Components.Run.isEnd()) {
-          controls[1].classList.add(settings.classes.disabledArrow);
-        }
-      }
     },
 
 
